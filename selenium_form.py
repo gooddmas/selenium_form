@@ -19,7 +19,7 @@ def invalid_login():
     browser = webdriver.Chrome()
     browser.get('https://the-internet.herokuapp.com/login')
     browser.find_element_by_id('username').send_keys('SOMEBODY')
-    browser.find_element_by_id('password').send_keys('SuperSecretPassword')
+    browser.find_element_by_id('password').send_keys('SuperSecretPassword!')
     browser.find_element_by_css_selector('.fa').click()
     assert 'Your username is invalid' in browser.page_source
     browser.quit()
@@ -29,8 +29,8 @@ def invalid_login():
 def logout():
     browser = webdriver.Chrome()
     browser.get("https://the-internet.herokuapp.com/login")
-    browser.find_element_by_id('username').send_keys('SOMEBODY')
-    browser.find_element_by_id('password').send_keys('SuperSecretPassword')
+    browser.find_element_by_id('username').send_keys('tomsmith')
+    browser.find_element_by_id('password').send_keys('SuperSecretPassword!')
     browser.find_element_by_css_selector('.fa').click()
     browser.find_element_by_css_selector('#content > div > a > i').click()
     assert 'You logged out of the secure area' in browser.page_source
