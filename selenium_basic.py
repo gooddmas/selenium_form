@@ -25,7 +25,7 @@ def main():
     browser.find_element_by_css_selector('#sum2').send_keys(TEST_DATA['two_input_second'])
     browser.find_element_by_css_selector('#gettotal > button').click()
 
-    assert browser.find_element_by_css_selector('#displayvalue') == 777
+    assert browser.find_element_by_css_selector('#displayvalue').text == '777'
 
     browser.quit()
 
