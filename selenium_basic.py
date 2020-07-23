@@ -6,6 +6,8 @@ TEST_DATA = {
     'two_input_second': 444
 }
 
+output_second = TEST_DATA['two_input_first'] + TEST_DATA['two_input_second']
+
 
 def main():
     browser = webdriver.Chrome()
@@ -25,7 +27,7 @@ def main():
     browser.find_element_by_css_selector('#sum2').send_keys(TEST_DATA['two_input_second'])
     browser.find_element_by_css_selector('#gettotal > button').click()
 
-    assert browser.find_element_by_css_selector('#displayvalue').text == '777'
+    assert browser.find_element_by_css_selector('#displayvalue').text == str(output_second)
 
     browser.quit()
 
